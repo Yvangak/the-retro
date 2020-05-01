@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(path = "/api/the-retro/v1/retrospective")
-public class HappyController {
+public class FeelingsController {
 
     @GetMapping("/feelings")
     public ResponseEntity<String> getFeelings(){
