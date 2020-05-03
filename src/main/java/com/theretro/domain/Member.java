@@ -4,8 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Builder
 @AllArgsConstructor
@@ -27,4 +30,10 @@ public class Member {
     @ManyToOne
     @JoinColumn(name = "member_team_id", nullable = false)
     private Team team;
+    @CreatedDate
+    @Column(name = "CREATED_ON")
+    private Date createdOn;
+    @LastModifiedDate
+    @Column(name = "LAST_MODIFIED_DATE")
+    private Date lastModifiedDate;
 }
